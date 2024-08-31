@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import localFont from 'next/font/local'
 
-const inter = Inter({ subsets: ["latin"] });
+const pretendard = localFont({
+  // src: '../fonts/PretendardVariable.woff2',
+  // src : 'fonts/PretendardVariable.woff2',
+  src : '../../public/fonts/PretendardVariable.woff2',
+  // src: '@/fonts/PretendardVariable.woff2', // 매핑된 경로 사용
+  // src: '/fonts/PretendardVariable.woff2', // 매핑된 경로 사용
+  display: 'swap',
+  weight: '45 920',
+  variable: '--font-pretendard',
+})
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+
+      </head>
+      {/* <body> */}
+      <body className={`${pretendard.variable} font-pretendard`}>
+        {children}
+        </body>
     </html>
   );
 }
