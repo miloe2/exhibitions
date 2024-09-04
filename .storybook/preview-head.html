@@ -1,0 +1,17 @@
+<!-- 폰트 파일을 사전 로드하여 성능 향상 -->
+<link rel="preload" href="/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+<!-- 실제로 폰트를 사용하기 위한 CSS 설정 -->
+<style>
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/PretendardVariable.woff2') format('woff2'),
+         url('/fonts/PretendardVariable.woff') format('woff');
+    font-weight: 45 920;
+    font-display: swap;
+  }
+
+  body {
+    font-family: 'Pretendard', sans-serif;
+  }
+</style>

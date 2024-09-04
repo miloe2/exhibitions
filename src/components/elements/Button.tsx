@@ -10,15 +10,15 @@ export const Button = ({
   size = 'md',
   backgroundColor = 'primary', // 기본값 설정
   label = 'button',
-  shape = 'semi',
+  shape = 'round',
   onClick,
   ...props
 }: ButtonProps) => {
   // 사이즈에 따른 클래스 정의
   const sizeClass = {
-    sm: 'px-2 py-1 text-sm',
-    md: 'px-4 py-2 text-base',
-    lg: 'px-6 py-3 text-lg',
+    sm: 'px-4 py-2 text-base',
+    md: 'px-6 py-2 text-base',
+    lg: 'px-10 py-2 w-full text-base',
   };
 
   // 모양에 따른 클래스 정의
@@ -30,22 +30,28 @@ export const Button = ({
 
   // 배경색 및 글자색 정의
   const bgClass = {
-    primary: '#333',
+    primary: '#222',
     secondary: '#fff',
-    disabled: '#ccc',
+    disabled: '#ddd',
   };
 
   const fontColor = {
-    primary: '#ddd',
+    primary: '#fff',
     secondary: '#111',
     disabled: '#888',
   };
 
+
+   // 테두리 스타일을 secondary 버튼일 때만 추가
+   const borderStyle = backgroundColor === 'secondary' ? 'border border-gray-300' : '';
+
+
   // 클래스명과 스타일 설정
-  const buttonClass = `${roundedClass[shape]} ${sizeClass[size]}`;
+  const buttonClass = `${roundedClass[shape]} ${sizeClass[size]} ${borderStyle}`;
   const buttonStyle = {
     backgroundColor: bgClass[backgroundColor],
     color: fontColor[backgroundColor],
+    boxSizing: 'border-box' as const, // Ensure border-box is applied correctly
   };
 
   return (
@@ -55,7 +61,7 @@ export const Button = ({
       style={buttonStyle} // 인라인 스타일로 전달
       {...props} // 나머지 props 전달
     >
-      {label}
+      {label} 
     </button>
   );
 };

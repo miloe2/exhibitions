@@ -15,8 +15,8 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: [
-    { from: '../public', to: '/public' }, // 프로젝트 루트의 public 폴더 전체를 static으로 제공
-    { from: '../public/font', to: '/fonts' }, // 폰트가 있는 디렉토리에서 Storybook이 직접 접근할 수 있도록 설정
-  ],
+    "../public", 
+    { from: "../public/fonts", to: "/fonts" },
+  ]
 };
 export default config;
