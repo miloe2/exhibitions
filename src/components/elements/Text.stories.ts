@@ -5,6 +5,7 @@ import { Text } from './Text';
 const meta: Meta<typeof Text> = {
   title: 'Example/Text',
   component: Text,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',  // Centering the component layout
   },
@@ -27,7 +28,7 @@ export const Default: Story = {
 export const Secondary: Story = {
   args: {
     text: '안녕하세요. Lorem Ipsum is simply dummy text. ',
-    size: 18,
+    size: 16,
     type: 'secondary',           // Secondary type with lighter color
   },
 };

@@ -1,7 +1,5 @@
-import React from 'react';
-
 export interface TextProps {
-  size?: 24 | 18 | 14;
+  size?: 24 | 16 | 14;
   text: string;
   type: 'default' | 'secondary' | 'accent';
   weight?: 'regular' | 'medium' | 'bold';

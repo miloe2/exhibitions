@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import localFont from 'next/font/local'
+import localFont from 'next/font/local';
 
 const pretendard = localFont({
-  // src: '../fonts/PretendardVariable.woff2',
-  // src : 'fonts/PretendardVariable.woff2',
-  src : '../../public/fonts/PretendardVariable.woff2',
-  // src: '@/fonts/PretendardVariable.woff2', // 매핑된 경로 사용
-  // src: '/fonts/PretendardVariable.woff2', // 매핑된 경로 사용
+  src: '../../public/fonts/PretendardVariable.woff2',
   display: 'swap',
   weight: '45 920',
   variable: '--font-pretendard',
-})
+});
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,13 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-
-      </head>
+      <head></head>
       {/* <body> */}
       <body className={`${pretendard.variable} font-pretendard`}>
         {children}
-        </body>
+      </body>
     </html>
   );
 }
