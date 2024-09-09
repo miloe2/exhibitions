@@ -11,8 +11,10 @@ const headerClass = {
   // light : 'bg-white text-[#222]'
 }
 
-export const Header = ({ initialDarkMode  }: HeaderProps) => {
-  const [ isDark, setIsDark ] = useState(initialDarkMode )
+export const Header = ({ 
+  initialDarkMode  
+}: HeaderProps) => {
+  const [ isDark, setIsDark ] = useState(initialDarkMode)
   const handleUiMode = () => {
     console.log('click');
     setIsDark(!isDark)
