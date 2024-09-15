@@ -1,17 +1,43 @@
-export interface SwiperContentProps {
-  imgUrl: string;
-  link: string;
-  onClick?: () => void;
-}
-export const SwiperContent = ({ imgUrl = 'https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9%22', link } :SwiperContentProps ) => {
-  return(
-    <>
-      <div> 
-        <img src={imgUrl} alt="" />
-        
-      </div>
-    </>
-  );
+// components/elements/SwiperSlidesComponent.tsx
+import React from 'react';
+import { SwiperSlide } from 'swiper/react';
+
+const SwiperSlidesComponent = ():React.ReactNode[] => {
+  // 슬라이드를 생성하는 로직
+  const slides = [
+    <SwiperSlide key="1">test1</SwiperSlide>,
+    <SwiperSlide key="2">test2</SwiperSlide>,
+    <SwiperSlide key="3">test3</SwiperSlide>,
+  ];
+
+  return slides; // SwiperSlide 요소들을 반환
 };
 
-export default SwiperContent
+export default SwiperSlidesComponent;
+
+
+
+// "use client";
+// import { ExhibitionDetail, ExhibitionList } from "@/types/api";
+// import { SwiperSlide } from "swiper/react";
+
+
+
+
+
+// export const SwiperContent = ({ data } : any) => {
+//   return(
+//     <>
+//       {data.map((item: ExhibitionDetail) => (
+//         <SwiperSlide key={item.id}>
+//           <div>
+//             <img src={item.imgUrl} alt={item.eventName} />
+//           </div>
+//         </SwiperSlide>
+//       ))}
+//     </>
+//   );
+// };
+
+// export default SwiperContent
+
