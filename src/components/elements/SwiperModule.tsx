@@ -1,9 +1,11 @@
 "use client";
 
 import React, { ReactNode } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import { Swiper } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 interface SwiperModuleProps {
   loop : boolean;
@@ -13,10 +15,8 @@ interface SwiperModuleProps {
   slidesPerView: number;
   slides : ReactNode[];
 }
-// 스와이퍼 모듈에 스와이퍼 콘텐츠를 넣고. 페이지에서는 아무것도 안하게. 그러면 
-// 스와이퍼에 슬라이드를 만들고 그냥 거기에 때려 넣기. 
-// 재사용가능한가? 콘텐츠를 
 const SwiperModule = ({ loop, navigation, pagination, spaceBetween, slidesPerView, slides }: SwiperModuleProps) => {
+  
   return (
     <Swiper
       loop={loop}
@@ -28,9 +28,10 @@ const SwiperModule = ({ loop, navigation, pagination, spaceBetween, slidesPerVie
       modules={[Navigation, Pagination]}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
+      className='custom-swiper w-full h-full'
     >
       {slides}
-      
+
     </Swiper>
   );
 };

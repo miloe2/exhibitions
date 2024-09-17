@@ -1,11 +1,13 @@
 import React from 'react';
 import Swiper from 'swiper';
+import Text from '../elements/Text';
 import { SwiperSlide } from 'swiper/react';
 const contents = [
   { 
     id : 1,
     startDate : '2024-01-05',
     finisDate : '2024-01-08',
+    country : '미국',
     city : '라스베가스',
     venue : '미국 라스베가스 LVCC & Venetian Expo',
     shortName : 'CES',
@@ -19,6 +21,7 @@ const contents = [
     id : 2,
     startDate : '2024-01-09',
     finisDate : '2024-01-12',
+    country : '홍콩',
     city : '홍콩',
     venue : 'Hong Kong Convention and Exhibition Centre (HKCEC)',
     shortName : 'HKBPF',
@@ -32,6 +35,7 @@ const contents = [
     id : 3,
     startDate : '2024-01-31',
     finisDate : '2024-02-02',
+    country : '미국',
     city : '라스베가스',
     venue : 'Las Vegas Convention Center',
     shortName : 'IBS',
@@ -45,11 +49,42 @@ const contents = [
 const SlideContentMain = ():React.ReactNode[] => {
   let slides = contents.map((item)=>{
     return (
-      <SwiperSlide key={item.id}>
-        <div className='bg-red-50'>
-          {item.eventName}
+      <SwiperSlide
+      key={item.id}
+      className="w-full h-full bg-no-repeat bg-cover relative"
+      style={{ backgroundImage: `url(${item.imgUrl})` }}
+    >
+      <div className="bg-black w-full h-full opacity-45 absolute top-0 left-0"></div>
+      <div className="text-white relative flex h-full flex-col px-16">
+
+        <div className='mt-24 flex flex-col'>
+          <Text
+            text={`${item.startDate} - ${item.finisDate}`}
+            type='white'
+            size={14}
+          />
+          <Text
+            text={`${item.country}. ${item.city}`}
+            type='white'
+            size={14}
+            className='mt-4'
+          />
+          <Text
+            text={item.eventName}
+            type='white'
+            weight='bold'
+          />
+          <Text
+            text={item.englishName}
+            type='white'
+            weight='medium'
+            size={16}
+          />
         </div>
-      </SwiperSlide>
+
+        {/* {item.city} */}
+      </div>
+    </SwiperSlide>
       )
     })
   return slides;

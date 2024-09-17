@@ -1,10 +1,11 @@
 export interface TextProps {
   size?: 24 | 16 | 14;
   text: string;
-  type: 'default' | 'secondary' | 'accent';
+  type: 'default' | 'secondary' | 'accent' | 'white';
   weight?: 'regular' | 'medium' | 'bold';
   lineHeight?: number;
   letterSpacing?: number;
+  className? : string;
   onClick?: () => void;
 }
 
@@ -13,6 +14,7 @@ export const Text = ({
   text = '텍스트를 입력해주세요.',
   type = 'default',
   weight = 'regular',
+  className,
   lineHeight = 1.5,
   letterSpacing = 0.5,
   onClick,
@@ -22,6 +24,7 @@ export const Text = ({
     default: '#222',
     secondary: '#888', 
     accent: '#007BFF', 
+    white : '#fff'
   };
 
   // Define font weight mapping
@@ -43,6 +46,7 @@ export const Text = ({
   return (
     <p
       onClick={onClick}
+      className={className}
       style={textStyle} // Apply styles inline
       {...props} // Pass additional props
     >

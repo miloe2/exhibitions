@@ -13,7 +13,7 @@ export default function Home() {
     <main className="mx-auto max-w-5xl">
       <div className="bg-red-50 w-40 h-40">
       </div>
-      <div className="w-1/2 h-96 bg-red-500">
+      <div className="w-2/3 h-80 ">
       <SwiperModule 
           loop={true}
           pagination={true}

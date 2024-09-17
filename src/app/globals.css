@@ -111,3 +111,38 @@ table {
 button {
   box-sizing: border-box; /* Ensure specifically for buttons */
 }
+
+
+
+/* Swiper의 기본 네비게이션 및 페이지네이션 클래스 덮어쓰기 */
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev {
+  color: #fff; /* 화살표 색상 */
+  font-size: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* 배경색 */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* 동그랗게 만들기 */
+}
+.custom-swiper {
+  --swiper-navigation-size: 14px;
+}
+
+/* hover 효과 */
+.custom-swiper .swiper-button-next:hover,
+.custom-swiper .swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 페이지네이션 스타일 */
+.custom-swiper .swiper-pagination-bullet {
+  background-color: #ddd; /* 기본 색상 */
+  width:8px;
+  height: 8px;
+  opacity: 1;
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+  background-color: #007BFF; /* 활성화된 페이지네이션 색상 */
+}
+
