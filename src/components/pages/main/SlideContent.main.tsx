@@ -1,6 +1,6 @@
 import React from 'react';
 import Swiper from 'swiper';
-import Text from '../elements/Text';
+import Text from '../../elements/Text';
 import { SwiperSlide } from 'swiper/react';
 const contents = [
   { 

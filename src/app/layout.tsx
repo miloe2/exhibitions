@@ -28,7 +28,6 @@ export default function RootLayout({
       {/* <body> */}
       <body className={`${pretendard.variable} font-pretendard`}>
         <Header initialDarkMode={true} />
-
         {children}
       </body>
     </html>

@@ -13,9 +13,10 @@ interface SwiperModuleProps {
   pagination : boolean;
   spaceBetween: number;
   slidesPerView: number;
+  className : string;
   slides : ReactNode[];
 }
-const SwiperModule = ({ loop, navigation, pagination, spaceBetween, slidesPerView, slides }: SwiperModuleProps) => {
+const SwiperModule = ({ loop, navigation, pagination, spaceBetween, slidesPerView, className, slides }: SwiperModuleProps) => {
   
   return (
     <Swiper
@@ -28,7 +29,8 @@ const SwiperModule = ({ loop, navigation, pagination, spaceBetween, slidesPerVie
       modules={[Navigation, Pagination]}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
-      className='custom-swiper w-full h-full'
+      className={`${className} custom-swiper`}
+      style={{ marginLeft: 0 }}
     >
       {slides}
 
